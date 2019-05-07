@@ -1,18 +1,18 @@
+import { routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
-import createHistory from 'history/createBrowserHistory';
 
 import './index.css';
-import Router from './views';
 import combine from './reducers';
 import mySaga from './services';
+import Router from './views';
 
-const history = createHistory(); // 浏览器历史记录对象
+const history = createBrowserHistory(); // 浏览器历史记录对象
 
 const sagaMiddleware = createSagaMiddleware(); // 创建saga中间件对象
 
